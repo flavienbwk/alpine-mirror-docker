@@ -11,7 +11,7 @@ This repository refactors [victorb](https://github.com/victorb/alpine-mirror)'s 
 
 ## Downloading & updating
 
-1. Setup your Alpine version in `docker-compose.yml`
+1. Setup your Alpine version and releases in `mirror.sh`
 
 2. Run the `mirror` container :
 
@@ -20,11 +20,11 @@ This repository refactors [victorb](https://github.com/victorb/alpine-mirror)'s 
     docker-compose up mirror
     ```
 
+> Tips: We recommend you downloading the mirror from [a cloud provider](https://www.scaleway.com/en/) and then transfer the files to your computer.
+
 ## Serving
 
-1. Check your mirroring succeeded in `./mirror/mirror/*` or typing `du -sh ./mirror`
-
-    _If this directory is at least 120G, you can consider it worked._
+1. Check your mirroring succeeded in `./mirror/*` or typing `du -sh ./mirror` to check the volume
 
 2. Run the server :
 

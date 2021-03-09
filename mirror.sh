@@ -8,14 +8,24 @@ if [ -z "$flock" ] ; then
 	exec env flock=1 flock -n $lockfile "$0" "$@"
 fi
 
-src=rsync://rsync.alpinelinux.org/alpine/${ALPINE_VERSION}
+alpine_version="v3.13"
+src=rsync://rsync.alpinelinux.org/alpine/${alpine_version}
 dest=downloads
 
-mkdir -p "$dest"
-rsync \
-	--archive \
-	--update \
-	--info=progress2 \
-	--hard-links \
-	--timeout=600 \
-	"$src" "$dest"
+for arch in "x86" "x86_64"
+do
+	for release in "main" "community" "releases"
+	do
+		arch_src="$src/$release/$arch"
+		arch_dest="$dest/${alpine_version}/$release"
+		mkdir -p "$arch_dest"
+		rsync \
+			--archive \
+			--update \
+			--info=progress2 \
+			--hard-links \
+			--timeout=600 \
+			"$arch_src" "$arch_dest"
+	done
+done
+

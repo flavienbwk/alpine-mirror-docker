@@ -8,8 +8,6 @@ services:
         volumes:
             - "./mirror.sh:/alpine-mirror/mirror.sh:ro"
             - "./mirror:/alpine-mirror/downloads"
-        environment:
-            ALPINE_VERSION: "v3.13"
 
     server:
         build:
