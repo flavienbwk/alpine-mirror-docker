@@ -26,6 +26,8 @@ This repository refactors [victorb](https://github.com/victorb/alpine-mirror)'s 
 
 1. Check your mirroring succeeded in `./mirror/*` or typing `du -sh ./mirror` to check the volume
 
+    The default configuration should make you download _47G_
+
 2. Run the server :
 
     ```bash
