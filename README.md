@@ -1,8 +1,8 @@
 # alpine-mirror-docker
 
 <p align="center">
-    <a href="https://travis-ci.com/flavienbwk/alpine-mirror-docker.svg?branch=master" target="_blank">
-        <img src="https://travis-ci.com/flavienbwk/alpine-mirror-docker.svg?branch=master"/>
+    <a href="https://travis-ci.com/github/flavienbwk/alpine-mirror-docker" target="_blank">
+        <img src="https://travis-ci.com/flavienbwk/alpine-mirror-docker.svg?branch=main&status=passed"/>
     </a>
 </p>
 <p align="center">Status : tested & working :heavy_check_mark:</p>
