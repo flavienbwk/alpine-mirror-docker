@@ -9,7 +9,7 @@ services:
             - "./mirror.sh:/alpine-mirror/mirror.sh:ro"
             - "./mirror:/alpine-mirror/downloads"
         environment:
-            ALPINE_VERSION: "3.13"
+            ALPINE_VERSION: "v3.13"
 
     server:
         build:
