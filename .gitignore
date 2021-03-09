@@ -1,0 +1,4 @@
+mirror/
+!mirror/.gitkeep
+*.bak
+*.tar.*

@@ -1,0 +1,23 @@
+version: '3.3'
+
+services: 
+
+    mirror:
+        build: .
+        command: /alpine-mirror/mirror.sh
+        volumes:
+            - "./mirror.sh:/alpine-mirror/mirror.sh:ro"
+            - "./mirror:/alpine-mirror/downloads"
+        environment:
+            ALPINE_VERSION: "3.13"
+
+    server:
+        build:
+            context: .
+            dockerfile: nginx.Dockerfile
+        restart: always
+        command: [nginx-debug, '-g', 'daemon off;']
+        volumes:
+            - "./mirror:/alpine-mirror/downloads:ro"
+        ports:
+            - "8080:80"
